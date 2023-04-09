@@ -4,6 +4,56 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 // Array Accessing
+const bookArray = [
+  {
+    bookName: "The Power of Your Subconscious Mind",
+    bookImg:
+      "https://m.media-amazon.com/images/I/71UwSHSZRnS._AC_UY327_FMwebp_QL65_.jpg",
+    bookAuthor: "Joseph Murphy",
+    bookPrice: 150,
+  },
+  {
+    bookName: "The Subtle Art of Not Giving a F*ck",
+    bookImg:
+      "https://m.media-amazon.com/images/I/71t4GuxLCuL._AC_UY327_FMwebp_QL65_.jpg",
+    bookAuthor: "Mark Manson",
+    bookPrice: 333,
+  },
+];
+
+const Books = () => {
+  return (
+    <>
+      <main className="booklist ">
+        {bookArray.map((bookInfo) => {
+          // const { bookName, bookImg, bookAuthor } = bookInfo;
+          return (
+            <BookDetails
+              name={bookInfo.bookName}
+              img={bookInfo.bookImg}
+              author={bookInfo.bookAuthor}
+              price={bookInfo.bookPrice}
+            />
+          );
+        })}
+      </main>
+    </>
+  );
+};
+
+const BookDetails = ({ name, img, author, price }) => {
+  return (
+    <section className="book">
+      <h1>{name}</h1>
+      <img src={img} alt="" />
+      <h3>{author}</h3>
+      <h2>Rs.{price}</h2>
+    </section>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Books></Books>);
 
 // //Right way of accessing dynamically
 // const bookOne = {
@@ -55,9 +105,6 @@ import "./index.css";
 //     </section>
 //   );
 // };
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(<Books></Books>);
 
 // //Props
 // //Object Accessing
