@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  color-scheme: dark light;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+
+  background: #0f2130;
+  color: #222;
+}
+h2 {
+  color: azure;
+  font-size: clamp(1rem, 2.8vw, 3rem);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+h3 {
+  color: lightgray;
+  font-size: clamp(0.8rem, 2vw, 2rem);
+  padding-top: 0.4rem;
+  font-weight: 300;
+}
+button {
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+}
+
+.booklist {
+  width: 90vw;
+  max-width: 1190px;
+  margin: 1rem auto;
+  background: maroon;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.5rem;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  text-align: center;
+
+  max-width: 320px;
+
+  background: darkslategray;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.book img {
+  width: minmax(220px, 540px);
+  max-width: 100%;
+  border: 2px solid orange;
+
+  padding: 0.3rem;
+}
